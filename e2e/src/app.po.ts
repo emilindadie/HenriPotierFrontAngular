@@ -6,7 +6,7 @@ export class AppPage {
   }
 
   getInitialRouteTitleText(): Promise<string> {
-    return element(by.css('app-root app-article h1')).getText() as Promise<string>;
+    return element(by.css('app-root app-article .article-container h1')).getText() as Promise<string>;
   }
 
   navigateToCustomRoute(route: string) {

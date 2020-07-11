@@ -1,0 +1,9 @@
+
+.mat-card {
+    width: calc(100% - 70px);
+    height: 80%;
+  }
+
+  mat-grid-tile {
+    padding-top: 24px !important;
+}

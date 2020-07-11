@@ -5,3 +5,8 @@ Feature: Go to the home
     Given I am on the home page
     When I do nothing
     Then I should see the title
+
+  Scenario: Load Article
+    Given I am on the home page
+    When I do nothing
+    Then I should see articles loaded

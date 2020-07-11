@@ -1,6 +1,7 @@
-import { Before, Then,  } from 'cucumber';
+import { Before, Then } from 'cucumber';
 import { expect } from 'chai';
 import { ArticlePage } from '../article.po';
+import { browser } from 'protractor';
 
 let page: ArticlePage;
 
@@ -9,5 +10,7 @@ Before(() => {
 });
 
 Then(/^I should see articles loaded$/, async () => {
-    expect(await page.getArticleItem().length > 0).to.equal(true);
+    await browser.waitForAngularEnabled(false);
+    const element = await page.getArticleItem();
+    expect(element.length > 0).to.equal(true);
 });

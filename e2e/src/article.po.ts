@@ -6,6 +6,11 @@ export class ArticlePage {
     }
 
     getArticleItem(): ElementArrayFinder {
-    return element.all(by.css('app-root app-article .article-container .article-item')) as ElementArrayFinder;
+        return element.all(
+        by.scss('app-root app-articles-list .articles-list-container .articles-list-container-item')) as ElementArrayFinder;
+    }
+
+    getInitialRouteTitleText(): Promise<string> {
+        return element(by.scss('app-root app-articles-list .articles-list-container h1')).getText() as Promise<string>;
     }
   }

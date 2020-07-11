@@ -1,0 +1,12 @@
+.articles-list-container {
+  &-title {
+    text-align: center;
+  }
+  &-item {
+      padding-top: 24px !important;
+      &-mat-card {
+        width: calc(100% - 70px);
+        height: 80%;
+      }
+  } 
+}

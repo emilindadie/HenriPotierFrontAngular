@@ -1,27 +1,29 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArticleComponent } from './article.component';
-import { BookService } from '../services/book.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ArticlesListComponent } from './articles-list.component';
 import { By } from '@angular/platform-browser';
+import { BookService } from '../../services/book.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Observable, of } from 'rxjs';
-import { IBook } from '../models/book.model.i';
+import { IArticle } from 'src/app/modules/shared/models/article.model.i';
 import { mockGetAllbooks } from 'test-files/book';
 
+
+
 class FakeBookService {
-  loadBooks(): Observable<IBook[]> {
+  loadBooks(): Observable<IArticle[]> {
     return of(mockGetAllbooks);
   }
 }
 
-describe('ArticleComponent', () => {
-  let component: ArticleComponent;
-  let fixture: ComponentFixture<ArticleComponent>;
+describe('ArticlesListComponent', () => {
+  let component: ArticlesListComponent;
+  let fixture: ComponentFixture<ArticlesListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      declarations: [ ArticlesListComponent ],
       imports: [HttpClientTestingModule],
-      declarations: [ ArticleComponent ],
       providers: [
         {
           provide: BookService,
@@ -33,7 +35,7 @@ describe('ArticleComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ArticleComponent);
+    fixture = TestBed.createComponent(ArticlesListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

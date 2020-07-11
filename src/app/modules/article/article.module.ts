@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ArticleRoutingModule } from './article-routing.module';
-import { ArticleComponent } from './article/article.component';
+import { ArticlesListComponent } from './components/articles-list/articles-list.component';
+import { BookService } from './services/book.service';
 
 
 @NgModule({
-  declarations: [ArticleComponent],
+  declarations: [ArticlesListComponent],
   imports: [
     CommonModule,
     ArticleRoutingModule
   ],
-  providers: []
+  providers: [BookService]
 })
 export class ArticleModule { }

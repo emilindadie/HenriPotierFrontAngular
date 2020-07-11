@@ -1,0 +1,14 @@
+:host::ng-deep app-articles-list{
+    top: 65px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+app-header{
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    height: 65px;
+}

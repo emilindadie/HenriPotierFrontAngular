@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  {path: '', loadChildren: () => import('./modules/article/article.module').then(m => m.ArticleModule)},
+  {path: '', loadChildren: () => import('./modules/shell/shell.module').then(m => m.ShellModule)},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

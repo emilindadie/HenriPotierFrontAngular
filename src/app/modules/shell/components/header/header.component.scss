@@ -1,0 +1,42 @@
+.header-container {
+    box-shadow: 0 1px 1px rgba(0,0,0,.25);
+    background: white;
+    border-bottom: 2px solid #eee;
+    height: 100%;
+
+    nav {
+        height: 100%;
+    }
+
+    &-nav {
+        display: flex;
+        padding: 0 21px 0 21px;
+        flex-direction: row;
+        height: auto;
+        width: 93%;
+        .left{
+            img {
+                width: 25%;
+                height: 100%;
+            }
+        }
+        &-active-item {
+            color: #17479E !important;
+            text-decoration: none;
+        }
+        &-item , &-item-right{
+            font-size: 20px;
+            color: #333333;
+            padding: 6px 8px;
+        }
+        &-item-right {
+            position: absolute;
+            right: 14px;
+        }
+
+        a {
+            color: #333333;
+            text-decoration: none;
+        }
+    }
+}

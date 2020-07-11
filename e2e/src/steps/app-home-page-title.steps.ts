@@ -15,6 +15,6 @@ Given(/^I am on the home page$/, async () => {
 
 When(/^I do nothing$/, () => {});
 
-Then(/^I should see the title$/, async () => {
+Then(/^I should see home page title$/, async () => {
   expect(await page.getInitialRouteTitleText()).to.equal('Article page');
 });

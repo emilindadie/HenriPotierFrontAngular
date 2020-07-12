@@ -6,7 +6,13 @@ const routes: Routes = [
   {
     path: '', component: ShellComponent, children: [
       {
-        path: '', loadChildren: () => import('../article/article.module').then(m => m.ArticleModule)
+        path: '', redirectTo: 'articles',
+      },
+      {
+        path: 'articles', loadChildren: () => import('../article/article.module').then(m => m.ArticleModule),
+      },
+      {
+        path: 'panier', loadChildren: () => import('../panier/panier.module').then(m => m.PanierModule),
       }
     ]
   }

@@ -1,15 +1,16 @@
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ArticlesListComponent } from './articles-list.component';
 import { By } from '@angular/platform-browser';
-import { BookService } from '../../services/book.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Observable, of } from 'rxjs';
 import { IArticle } from 'src/app/modules/shared/models/article.model.i';
 import { mockGetAllbooks } from 'test-files/book';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { IArticlesListState } from '../../states/articles.state.i';
 import { MemoizedSelector } from '@ngrx/store';
-import { filteredArticlesSelector } from '../../selectors/articles-list.selector';
+import { ArticlesComponent } from './articles.component';
+import { IArticlesListState } from './states/articles.state.i';
+import { BookService } from './services/book.service';
+import { filteredArticlesSelector } from './selectors/articles-list.selector';
 
 class FakeBookService {
   loadBooks(): Observable<IArticle[]> {
@@ -17,15 +18,15 @@ class FakeBookService {
   }
 }
 
-describe('ArticlesListComponent', () => {
-  let component: ArticlesListComponent;
-  let fixture: ComponentFixture<ArticlesListComponent>;
+describe('ArticlesComponent', () => {
+  let component: ArticlesComponent;
+  let fixture: ComponentFixture<ArticlesComponent>;
   let mockStore: MockStore;
 
   let mockFilteredArticlesSelector: MemoizedSelector<IArticlesListState, IArticle[]>;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArticlesListComponent ],
+      declarations: [ ArticlesComponent ],
       imports: [HttpClientTestingModule],
       providers: [
         {
@@ -39,7 +40,7 @@ describe('ArticlesListComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ArticlesListComponent);
+    fixture = TestBed.createComponent(ArticlesComponent);
     component = fixture.componentInstance;
     mockStore = TestBed.inject(MockStore);
     mockFilteredArticlesSelector =  mockStore.overrideSelector(filteredArticlesSelector, mockGetAllbooks);

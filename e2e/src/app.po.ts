@@ -6,7 +6,7 @@ export class AppPage {
   }
 
   getInitialRouteTitleText(): Promise<string> {
-    return element(by.css('app-root app-shell app-articles-list .articles-list-container h1')).getText() as Promise<string>;
+    return element(by.css('app-root app-shell app-articles .articles-list-container h1')).getText() as Promise<string>;
   }
 
   navigateToCustomRoute(route: string) {
@@ -17,7 +17,7 @@ export class AppPage {
   // Article
   getArticlesItemArrayElement(): ElementArrayFinder {
     return element.all(
-    by.css('app-root app-shell app-articles-list .articles-list-container .articles-list-container-item')) as ElementArrayFinder;
+    by.css('app-root app-shell app-articles .articles-list-container .articles-list-container-item')) as ElementArrayFinder;
   }
 
   // Panier

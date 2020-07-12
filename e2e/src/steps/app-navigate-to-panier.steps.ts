@@ -12,7 +12,7 @@ When(/^I click on panier menu button$/, async () => {
     await browser.waitForAngularEnabled(false);
     const element: ElementFinder = await page.getPanierMenuButtonElement();
     expect(await element.isPresent()).to.equal(true);
-    element.click();
+    await element.click();
 });
 
 Then(/^I should see panier page title$/, async () => {

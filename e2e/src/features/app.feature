@@ -11,6 +11,11 @@ Feature: Go to the home
     When I do nothing
     Then I should see articles loaded
 
+  Scenario: Add Article to the panier
+    Given I am on the home page
+    When I add one article into the panier
+    Then I should see article successfully added into the panier
+
   Scenario: Navigate to panier
     Given I am on the home page
     When I click on panier menu button

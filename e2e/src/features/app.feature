@@ -14,9 +14,6 @@ Feature: Go to the home
   Scenario: Add Article to the panier
     Given I am on the home page
     When I add one article into the panier
-    Then I should see article successfully added into the panier
-
-  Scenario: Navigate to panier
-    Given I am on the home page
     When I click on panier menu button
     Then I should see panier page title
+    Then I should see panier articles

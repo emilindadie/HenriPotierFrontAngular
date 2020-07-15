@@ -5,15 +5,13 @@ import { PanierComponent } from './panier.component';
 import { GlobalPanierNgrxModule } from '../global-panier-ngrx/global-panier-ngrx.module';
 import { MaterialModule } from '../material/material.module';
 
-
-
 @NgModule({
   declarations: [PanierComponent],
   imports: [
     CommonModule,
     MaterialModule,
     PanierRoutingModule,
-    GlobalPanierNgrxModule
-  ]
+    GlobalPanierNgrxModule,
+  ],
 })
-export class PanierModule { }
+export class PanierModule {}

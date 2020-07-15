@@ -1,13 +1,27 @@
 .articles-list-container {
-    &-title {
-      text-align: center;
-    }
-    &-item {
-        padding-top: 24px !important;
-        &-mat-card {
-          width: calc(100% - 70px);
-          height: 80%;
-        }
-    } 
+  padding-top: 20px;
+  &-title {
+    text-align: center;
   }
-  
+
+  &-form {
+    padding-left: 16px;
+    &-mat-form-field {
+      width: 20.5%;
+    }
+  }
+  &-grid {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  &-item {
+    padding-top: 24px !important;
+    &-mat-card {
+      width: calc(100% - 70px);
+      height: 80%;
+    }
+  }
+}

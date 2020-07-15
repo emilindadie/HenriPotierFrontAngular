@@ -1,7 +1,12 @@
 <div class="header-container">
     <nav class="header-container-nav">
-        <button mat-button class="header-container-nav-item home-item"><a routerLink="/articles" routerLinkActive="header-container-nav-active-item">Home</a></button>
-        <button mat-button class="header-container-nav-item profil-item"><a routerLink="/profil" routerLinkActive="header-container-nav-active-item">Profil</a></button>
-        <button mat-button class="header-container-nav-item panier-item"><a routerLink="/panier" routerLinkActive="header-container-nav-active-item">Panier</a></button>
+        <button mat-button class="header-container-nav-item home-item"><a routerLink="/articles"
+                routerLinkActive="header-container-nav-active-item">Home</a></button>
+        <button mat-button class="header-container-nav-item profil-item"><a routerLink="/profil"
+                routerLinkActive="header-container-nav-active-item">Profil</a></button>
+        <button mat-button class="header-container-nav-item panier-item"><a routerLink="/panier"
+                routerLinkActive="header-container-nav-active-item">Panier <ng-container
+                    *ngIf="(panierContentCount$ | async) as count"><span *ngIf="count > 0">{{count}}</span>
+                </ng-container></a></button>
     </nav>
 </div>

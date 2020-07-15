@@ -1,6 +1,5 @@
 # HenriPotierFrontAngular
 
-
 # Exercice Front-end : La bibliothèque d'Henri Potier
 
 ### L’énoncé
@@ -47,3 +46,35 @@ Dans cet exemple, la promotion la plus intéressante pour le client est la promo
 
 
 *Au-delà de « l’exercice imposé », toute idée originale supplémentaire sera appréciée.*
+
+
+
+# Api Dependance with swagger ui
+[HenriPotierApi](https://github.com/emilindadie/HenriPotierApi)
+
+
+# Installation
+
+```bash
+$ npm install
+```
+
+# Run app (first run the api to use secure payment)
+```sh
+$ npm run start
+```
+
+# Run e2e and cucumber tests
+```sh
+$ npm run e2e
+```
+
+# Run tests
+```sh
+$ npm run test  
+```
+
+# Run tests with coverage
+```sh
+$ npm run test:cov
+```

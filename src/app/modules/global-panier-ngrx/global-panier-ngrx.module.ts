@@ -15,4 +15,4 @@ import { PanierService } from './services/panier.service';
   ],
   providers: [PanierService],
 })
-export class GlobalPanierNgrxModule { }
+export class GlobalPanierNgrxModule {}

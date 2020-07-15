@@ -1,14 +1,17 @@
-:host::ng-deep app-articles,  :host::ng-deep app-panier{
-    top: 65px;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
+:host::ng-deep app-articles,
+:host::ng-deep app-panier,
+:host::ng-deep app-profil {
+  top: 65px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  height: calc(100% - 65px);
 }
 
-app-header{
-    z-index: 1000;
-    top: 0;
-    width: 100%;
-    position: fixed;
-    height: 65px;
+app-header {
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  height: 65px;
 }

@@ -10,7 +10,7 @@ Before(() => {
 });
 
 Then(/^I should see articles loaded$/, async () => {
-    await browser.waitForAngularEnabled(false);
-    const element = await page.getArticlesItemArrayElement();
-    expect(element.length > 0).to.equal(true);
+  await browser.waitForAngularEnabled(false);
+  const element = await page.getArticlesItemArrayElement();
+  expect(element.length > 0).to.equal(true);
 });

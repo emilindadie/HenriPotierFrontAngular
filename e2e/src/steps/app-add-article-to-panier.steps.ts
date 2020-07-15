@@ -21,15 +21,13 @@ When(/^I click on panier menu button$/, async () => {
   await element.click();
 });
 
-
 Then(/^I should see panier page title$/, async () => {
   await browser.waitForAngularEnabled(false);
-  expect(await page.getPanierRouteTitleText()).to.equal('Panier page');
+  expect(await page.getPanierRouteTitleText()).to.equal('Basket page');
 });
 
-
 Then(/^I should see panier articles$/, async () => {
-    await browser.waitForAngularEnabled(false);
-    const firstPanierGridElement = await page.getFirstPanierGridElement();
-    expect(await firstPanierGridElement.isPresent()).to.equal(true);
+  await browser.waitForAngularEnabled(false);
+  const firstPanierGridElement = await page.getFirstPanierGridElement();
+  expect(await firstPanierGridElement.isPresent()).to.equal(true);
 });

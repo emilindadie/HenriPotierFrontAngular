@@ -6,11 +6,14 @@ import { IArticle } from '../../shared/models/article.model.i';
 
 @Injectable()
 export class PanierService {
+  constructor(private http: HttpClient) {}
 
-    constructor(private http: HttpClient) {}
-
-    calculateCommercialOffers(articles: IArticle[]): Observable<ICommercialOffers> {
-        const isbns = articles.map((article: IArticle) => article.isbn).join('');
-        return this.http.get<ICommercialOffers>(`http://henri-potier.xebia.fr/books/${isbns}/commercialOffers`);
-    }
+  calculateCommercialOffers(
+    articles: IArticle[],
+  ): Observable<ICommercialOffers> {
+    const isbns = articles.map((article: IArticle) => article.isbn).join(',');
+    return this.http.get<ICommercialOffers>(
+      `http://henri-potier.xebia.fr/books/${isbns}/commercialOffers`,
+    );
+  }
 }

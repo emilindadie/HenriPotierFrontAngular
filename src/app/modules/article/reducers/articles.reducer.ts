@@ -1,6 +1,8 @@
 import { IArticlesListState } from '../states/articles.state.i';
 import { IBaseAction } from '../../shared/actions/base.action.i';
 import { IArticleListAction } from '../actions/article.action.i';
+import { IArticle } from '../../shared/models/article.model.i';
+import * as _ from 'lodash';
 
 export const initialState: IArticlesListState = {
   articles: [],
@@ -24,8 +26,8 @@ export function ArticlesListReducer(
     case 'SUCCESSFFULLY_LOAD_BOOKS':
       return {
         ...state,
-        articles: [...state.articles, ...action.payload.articles],
-        filteredArticles: [...state.articles, ...action.payload.articles],
+        articles: [...arrayWithUniqueValue(state.articles, action.payload.articles)],
+        filteredArticles: [...arrayWithUniqueValue(state.articles, action.payload.articles)],
         articlesItemsCount:
           state.articles.length + action.payload.articles.length,
         filteredArticlesItemsCount:
@@ -68,4 +70,9 @@ export function ArticlesListReducer(
     default:
       return state;
   }
+}
+
+export function arrayWithUniqueValue(itemsState: IArticle[], itemsAction: IArticle[]) {
+    const data: IArticle[] = [...itemsState, ...itemsAction];
+    return _.uniqBy(data, 'isbn');
 }

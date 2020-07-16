@@ -10,7 +10,6 @@ export class ProfilService {
   constructor(private http: HttpClient) {}
 
   saveCard(card: ISaveCard): Observable<SecureApiResponse<ICard>> {
-    console.log(card);
     return this.http.post<SecureApiResponse<ICard>>('/api/cards/secure', card);
   }
 

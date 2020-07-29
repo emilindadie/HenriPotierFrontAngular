@@ -22,25 +22,21 @@ export function PanierReducer(
       return {
         ...state,
         panierContent: [...state.panierContent, action.payload.article],
-        panierAmount:
-          Number(state.panierAmount) + Number(action.payload.article.price),
+        panierAmount: state.panierAmount + action.payload.article.price,
         panierContentCount: state.panierContentCount + 1,
         successFullyAddArticle: true,
       };
-
     case 'UPDATE_COMMERCIAL_OFFER':
       return {
         ...state,
-        panierAmount:
-          Number(state.panierAmount) + Number(state.commercialOffer),
-        commercialOffer: Number(action.payload.commercialOffer),
+        panierAmount: state.panierAmount + state.commercialOffer,
+        commercialOffer: action.payload.commercialOffer,
       };
 
     case 'APPLY_COMMERCIAL_OFFER':
       return {
         ...state,
-        panierAmount:
-          Number(state.panierAmount) - Number(state.commercialOffer),
+        panierAmount: state.panierAmount - state.commercialOffer,
       };
 
     case 'REMOVE_ARTICLE':

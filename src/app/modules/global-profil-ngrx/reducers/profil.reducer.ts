@@ -29,11 +29,10 @@ export function ProfilReducer(
         ...state,
         cards: [...state.cards, action.payload.card],
         successSaveCard: true,
-        cardsCount: Number(state.cardsCount) + 1,
-        selectedCard:
-          Number(state.cardsCount) === 0
-            ? action.payload.card
-            : state.selectedCard,
+        cardsCount: state.cardsCount + 1,
+        selectedCard: state.cardsCount === 0
+          ? action.payload.card
+          : state.selectedCard,
       };
 
     case 'UPDATE_SELECTED_CARD':
